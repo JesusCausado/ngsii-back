@@ -1129,4 +1129,10 @@ def generate():
     return jsonify(response = "Error al ejecutar, Mensaje: " + str(e)), 500
     #return jsonify({"resp": "Exitoso"})
     #return vFuncExp
-app.run(debug=True)
+#app.run(debug=True)
+##esto es para que tome la IP de la maquina
+if __name__ == "__main__":  # Makes sure this is the main process
+	app.run( # Starts the site
+		host='0.0.0.0',  # Establishes the host, required for repl to detect the site
+		port=random.randint(2000, 9000)  # Randomly select the port the machine hosts on.
+	)
